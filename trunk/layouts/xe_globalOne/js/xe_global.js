@@ -1,5 +1,4 @@
 jQuery(function($){
-
     // Global Navigation Bar
     var gMenu = $('#header>div.gnb');
     var gItem = gMenu.find('>ul>li');
@@ -10,14 +9,13 @@ jQuery(function($){
     function gMenuToggle(){
         var t = $(this);
         if (t.next('ul').is(':hidden') || t.next('ul').length == 0) {
-            gItem.find('>ul').slideUp(200);
+            gItem.find('>ul').hide();
             gItem.find('a').removeClass('hover');
-            t.next('ul').slideDown(200);
+            t.next('ul').show();
             t.addClass('hover');            
         };
 
 		if(t.next('ul').width()){
-
 			if(t.next('ul').width()< t.parent().width()){
 				t.next('ul').width(t.parent().width());
 				t.next('ul').find('li').width(t.parent().width());
@@ -30,7 +28,7 @@ jQuery(function($){
 		return false;
     };
     function gMenuOut(){
-        gItem.find('ul').slideUp(200);
+        gItem.find('ul').hide();
         gItem.find('a').removeClass('hover');
     };
     gItem.find('>a').mouseover(gMenuToggle).focus(gMenuToggle);
