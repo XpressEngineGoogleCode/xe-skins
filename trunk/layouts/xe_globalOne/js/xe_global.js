@@ -3,7 +3,6 @@ jQuery(function($){
     // Global Navigation Bar
     var gMenu = $('#header>div.gnb');
     var gItem = gMenu.find('>ul>li');
-	var gItem_ul = gMenu.find('>ul');
     var ggItem = gMenu.find('>ul>li>ul>li');
     var lastEvent = null;
     gItem.find('>ul').hide();
@@ -16,17 +15,25 @@ jQuery(function($){
             t.next('ul').slideDown(200);
             t.addClass('hover');            
         };
+
 		if(t.next('ul').width()){
+
 			if(t.next('ul').width()< t.parent().width()){
 				t.next('ul').width(t.parent().width());
+				t.next('ul').find('li').width(t.parent().width());
+				t.next('ul').find('li').css('text-align','left');
+			}else{
+				t.next('ul').find('li').width(t.next('ul').width());
+				t.next('ul').find('li').css('text-align','left');
 			}
 		}
+		return false;
     };
     function gMenuOut(){
         gItem.find('ul').slideUp(200);
         gItem.find('a').removeClass('hover');
     };
     gItem.find('>a').mouseover(gMenuToggle).focus(gMenuToggle);
-    gItem_ul.mouseleave(gMenuOut);
+    gItem.mouseleave(gMenuOut);
 
 });
