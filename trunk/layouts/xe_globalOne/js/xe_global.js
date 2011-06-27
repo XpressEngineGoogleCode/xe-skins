@@ -5,6 +5,7 @@ jQuery(function($){
     var ggItem = gMenu.find('>ul>li>ul>li');
     var lastEvent = null;
     gItem.find('>ul').hide();
+	gItem.last().attr('class','last');
 	gItem.filter(':first').addClass('first');
     function gMenuToggle(){
         var t = $(this);

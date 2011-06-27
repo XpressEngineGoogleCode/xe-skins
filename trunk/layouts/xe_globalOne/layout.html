@@ -1,5 +1,6 @@
 <!--// js 파일 import -->
 <!--%import("js/xe_global.js")-->
+<!--%import("js/xe_official.js")-->
 
 <!--// 레이아웃과 연동될 css 파일 import -->
 <!--%import("css/default.css")-->
@@ -27,13 +28,12 @@
         </dl>
     <div id="header">
         <h1><!--@if($layout_info->logo_image)--><a href="{$layout_info->index_url}"><img src="{$layout_info->logo_image}" alt="logo" border="0" class="iePngFix" /></a><!--@else-->&nbsp;<!--@end--></h1>
-		<!--@if(!$logged_info)--><a href="#" class="btn_login"><img src="images/default/btn_login.gif" width="50" height="22" alt="login"></a>
-		<!--@else--><a href="{getUrl('act','dispMemberLogout')}" class="btn_login">Logout</a><!--@end-->
+
         <!-- GNB -->
         <div class="gnb">
 		<ul>
 		<li loop="$main_menu->list=>$key1,$val1" class="on m1"|cond="$val1['selected']"><a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'">{$val1['link']}</a>
-			<ul cond="$val1['list']">
+			<ul class="sub" cond="$val1['list']">
 				<li loop="$val1['list']=>$key2,$val2"><a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a></li>
 			</ul>
 		</li>
@@ -60,11 +60,11 @@
 			<div class="lnb">
 				<h2 loop="$main_menu->list=>$key1,$val1" cond="$val1['selected']"><a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'">{$val1['link']}</a></h2>
 				<ul class="list" loop="$main_menu->list=>$key1,$val1" cond="$val1['selected'] && $val1['list']">
-				<li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']"><a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a>
-				<ul cond="$val2['list']">
-						<li loop="$val2['list']=>$key3,$val3" class="active"|cond="$val3['selected']"><a href="{$val3['href']}" target="_blank"|cond="$val3['open_window']=='Y'">{$val3['link']}</a></li>
-				</ul>
-				</li>
+					<li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']"><a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a>
+						<ul cond="$val2['list']">
+							<li loop="$val2['list']=>$key3,$val3" class="active"|cond="$val3['selected']"><a href="{$val3['href']}" target="_blank"|cond="$val3['open_window']=='Y'">{$val3['link']}</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
             <!--@if($menu_1st)-->
