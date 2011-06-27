@@ -10,7 +10,7 @@
 body{background:#fff url(../images/default/bg_body.gif) repeat-x 0 0;font-family:Arial}
 #bodyWrap{position:relative;width:947px;margin:0 auto}
 /* Site Layout - Header */
-#header{position:relative;width:947px;height:120px;margin-bottom:10px}
+#header{position:relative;width:947px;height:120px;margin-bottom:10px; z-index:100}
 #header h1{position:absolute;top:17px;left:0;margin:0;padding:0}
 #language{position:absolute;top:18px;right:0;z-index:200;margin:0;font-family:Arial, Helvetica, sans-serif}
 #language dt{float:left;margin-right:8px;color:#3f4140}
@@ -24,16 +24,16 @@ body{background:#fff url(../images/default/bg_body.gif) repeat-x 0 0;font-family
 #it_search_form{position:absolute;top:50px;right:15px}
 #it_search_form .input{width:120px;height:17px;border:1px solid #bc4032;color:#888;font-size:.9em}
 #it_search_form .submit_button{visibility:hidden;width:1px;height:1px}
-.gnb{position:absolute;top:85px;left:0;height:37px;height:37px;margin:0;padding:0;white-space:nowrap}
+.gnb{position:absolute;top:85px;left:0;height:37px;height:37px;margin:0;padding:0;white-space:nowrap;}
 .gnb ul{margin:0;padding:0}
 .gnb ul li{float:left;position:relative;height:37px;padding-right:2px;padding-right:2px;background:url(../images/default/bgGnbVr.gif) no-repeat 100% 50%;line-height:37px;list-style:none}
 .gnb ul li.on a,
 .gnb ul li a:hover{background:url(../images/default/bg_gnb.gif) repeat-x 0 0;color:#fff;font-weight:bold}
 .gnb ul li a{display:block;padding:0 18px 0 17px;color:#3f4140;font-size:14px;font-weight:bold;text-decoration:none}
-.gnb ul li .sub{position:absolute;top:36px;left:0;z-index:300;margin:0;padding:0;border:1px solid #adb1c6;background:#fff}
-.gnb ul li .sub li{overflow:hidden;clear:both;height:33px;margin:0;padding:0;background:none;line-height:33px;text-align:center;*zoom:1}
-.gnb ul li .sub li a{background:none;color:#9fa09f}
-.gnb ul li .sub li a:hover{background:#898fa5!important;color:#fff!important;text-decoration:none}
+.gnb ul li .sub{position:absolute;top:36px;left:0;z-index:300;margin:0;padding:0;border:1px solid #adb1c6;background:#fff; z-index:500}
+.gnb ul li .sub li{clear:both;height:33px;margin:0;padding:0;background:none;line-height:33px;text-align:center;*zoom:1}
+.gnb ul li .sub li a{background:none;color:#9fa09f;}
+.gnb ul li .sub li a:hover{background:#777e98; color:#fff!important;text-decoration:none}
 #isSearch{padding:19px 0 15px 21px;border:1px solid #fff;background:#f3f4f4;border-radius:5px 5px 0 0}
 #isSearch .searchOrder{display:none}
 #isSearch .checked{display:block;position:absolute;top:0;left:0;width:64px;height:14px;padding:5px 0 0 5px;background:url(../images/default/bgSearchTerm.gif) no-repeat;color:#fff;font:11px '돋움', Dotum, '굴림', Gulim, AppleGothic, Sans-serif;line-height:normal;text-align:left}
