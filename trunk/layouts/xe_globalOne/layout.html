@@ -1,15 +1,9 @@
-<load target="js/xe_global.js" />
 <!--// js 파일 import -->
-<!--%import("js/xe_official.js")-->
+<!--%import("js/xe_global.js")-->
 
 <!--// 레이아웃과 연동될 css 파일 import -->
-<!--@if($layout_info->colorset == "white")-->
-    <!--%import("css/white.css")-->
-<!--@elseif($layout_info->colorset == "black")-->
-    <!--%import("css/black.css")-->
-<!--@else-->
-    <!--%import("css/default.css")-->
-<!--@end-->
+<!--%import("css/default.css")-->
+
 
 <!--@if($layout_info->background_image)-->
 <style type="text/css">
@@ -33,7 +27,8 @@
         </dl>
     <div id="header">
         <h1><!--@if($layout_info->logo_image)--><a href="{$layout_info->index_url}"><img src="{$layout_info->logo_image}" alt="logo" border="0" class="iePngFix" /></a><!--@else-->&nbsp;<!--@end--></h1>
-		<a href="#" class="btn_login"><img src="images/default/btn_login.gif" width="50" height="22" alt="login"></a>
+		<!--@if(!$logged_info)--><a href="#" class="btn_login"><img src="images/default/btn_login.gif" width="50" height="22" alt="login"></a>
+		<!--@else--><a href="{getUrl('act','dispMemberLogout')}" class="btn_login">Logout</a><!--@end-->
         <!-- GNB -->
         <div class="gnb">
 		<ul>
