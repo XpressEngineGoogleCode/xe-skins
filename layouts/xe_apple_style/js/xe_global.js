@@ -10,12 +10,12 @@ jQuery(function($){
 		gItem.last().attr('class','last');
 
 	gItem.filter(':first').addClass('first');
-	ggItem.find('>a').mouseover(function(){
-		old_class = $(this).parent('li').parent('ul').parent('li').attr('class');
-		$(this).parent('li').parent('ul').parent('li').attr('class','on m1');
+	ggItem.mouseover(function(){
+		old_class = $(this).parent('ul').parent('li').attr('class');
+		$(this).parent('ul').parent('li').attr('class','on m1');
 		$(this).mouseleave(function(){
 			if(old_class !="on m1" && old_class !="on m1 first")
-				$(this).parent('li').parent('ul').parent('li').attr('class','');
+				$(this).parent('ul').parent('li').attr('class','');
 		});
 	});
 
