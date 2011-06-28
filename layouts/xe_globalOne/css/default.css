@@ -32,7 +32,7 @@ body{background:#fff url(../images/default/bg_body.gif) repeat-x 0 0;font-family
 .gnb ul li.on a,
 .gnb ul li a:hover{background:url(../images/default/bg_gnb.gif) repeat-x 0 0;color:#fff;font-weight:bold}
 .gnb ul li a{display:block;padding:0 33px;color:#3f4140;font-size:14px;font-weight:bold;text-decoration:none}
-.gnb ul li .sub{position:absolute;top:36px;left:0;z-index:300;margin:0;padding:0;border:1px solid #adb1c6;background:#fff; z-index:500}
+.gnb ul li .sub{position:absolute;top:36px;left:0;z-index:300;margin:0;padding:0;border:1px solid #adb1c6;background:#fff; z-index:500;display:none}
 .gnb ul li .sub li{clear:both;height:33px;margin:0;padding:0;background:none;line-height:33px;text-align:center;*zoom:1}
 .gnb ul li .sub li a{background:none;color:#9fa09f;}
 .gnb ul li .sub li a:hover{background:url(../images/default/bg_gnb2.gif) repeat-x; _background:#777e98; color:#fff!important;text-decoration:none}
