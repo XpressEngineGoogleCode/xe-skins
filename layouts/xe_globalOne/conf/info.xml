@@ -62,59 +62,6 @@
     </author>
 
     <extra_vars>
-        <var name="colorset" type="select">
-            <title xml:lang="ko">컬러셋</title>
-            <title xml:lang="jp">カラーセット</title>
-            <title xml:lang="zh-CN">颜色</title>
-            <title xml:lang="zh-TW">顏色設定</title>
-            <title xml:lang="en">Colorset</title>
-            <title xml:lang="ge">Colorset</title>
-            <title xml:lang="ru">Colorset</title>
-            <title xml:lang="es">Set de colores</title>
-	   		<title xml:lang="vi">Màu sắc</title>
-            <description xml:lang="ko">원하시는 컬러셋을 선택해주세요.</description>
-            <description xml:lang="jp">希望するカラーセットを選択して下さい。</description>
-            <description xml:lang="zh-CN">请选择颜色。</description>
-            <description xml:lang="zh-TW">請選擇顏色。</description>
-            <description xml:lang="en">Please select a colorset you want.</description>
-            <description xml:lang="ge">Bitte wählen Sie ein colorset Sie wollen.</description>
-            <description xml:lang="ru">Выберите colorset хотите.</description>
-            <description xml:lang="es">Seleccione set de colores que desea.</description>
-	    <description xml:lang="vi">Hãy chọn màu sắc bạn muốn.</description>
-            <options value="default">
-                <title xml:lang="ko">기본</title>
-                <title xml:lang="jp">デフォルト</title>
-                <title xml:lang="en">Basic</title>
-                <title xml:lang="ge">Basic</title>
-                <title xml:lang="ru">Базовые</title>
-                <title xml:lang="es">Básico</title>
-                <title xml:lang="zh-CN">默认</title>
-                <title xml:lang="zh-TW">預設</title>
-		<title xml:lang="vi">Cơ bản</title>
-            </options>
-            <options value="black">
-                <title xml:lang="ko">검은색</title>
-                <title xml:lang="jp">黒</title>
-                <title xml:lang="en">Black</title>
-                <title xml:lang="ge">Schwarz</title>
-                <title xml:lang="ru">Черного</title>
-                <title xml:lang="es">Negro</title>
-                <title xml:lang="zh-CN">黑色</title>
-                <title xml:lang="zh-TW">黑色</title>
-				<title xml:lang="vi">Black</title>
-            </options>
-            <options value="white">
-                <title xml:lang="ko">하얀색</title>
-                <title xml:lang="jp">白</title>
-                <title xml:lang="en">white</title>
-                <title xml:lang="ge">weiß</title>
-                <title xml:lang="ru">белый</title>
-                <title xml:lang="es">Blanco</title>
-                <title xml:lang="zh-CN">白色</title>
-                <title xml:lang="zh-TW">白色</title>
-				<title xml:lang="vi">White</title>
-            </options>
-        </var>
         <var name="logo_image" type="image">
             <title xml:lang="ko">로고이미지</title>
             <title xml:lang="jp">ロゴイメージ</title>
