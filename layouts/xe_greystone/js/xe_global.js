@@ -19,6 +19,7 @@ jQuery(function($){
 		});
 	});
 
+
     function gMenuToggle(){
         var t = $(this);
         if (t.next('ul').is(':hidden') || t.next('ul').length == 0) {
@@ -27,6 +28,15 @@ jQuery(function($){
             t.next('ul').show();
             t.addClass('hover');            
         };
+
+		var max = 0;
+		t.next('ul').find('li').each(function(){
+			a_width = $(this).find('a').width();
+			$(this).find('a').height('31px');
+		});
+
+		
+
 
 		if(t.next('ul').width()){
 			if(t.next('ul').width()< t.parent().width()){
