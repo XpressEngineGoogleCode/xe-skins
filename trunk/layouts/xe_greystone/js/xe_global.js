@@ -32,7 +32,7 @@ jQuery(function($){
 		var max = 0;
 		t.next('ul').find('li').each(function(){
 			a_width = $(this).find('a').width();
-			$(this).find('a').height('31px');
+			$(this).find('a').height('33px');
 		});
 
 		
