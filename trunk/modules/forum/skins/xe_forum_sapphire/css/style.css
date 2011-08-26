@@ -108,7 +108,7 @@ ul, li, dl,dt,dd				{margin:0;padding:0; list-style:none;}
 
 .quoteTitle 						{font-style: italic;margin: 0 0 5px;}
 .quote_content						{margin:10px;}
-.quote_content .quote				{border:#CECECE solid 1px; padding:5px;}
+.quote				{border:#CECECE solid 1px; padding:5px;}
 .comment_quote_table .xpress-editor {margin:10px}
 .comment_quote_table				{width:100%;float:left !important;border-left:#bbb solid 1px;border-right:#bbb solid 1px;}
 .comment_quote_table .tr_header		{font-weight:bold;text-align:center;background:url('../images/editor_head_bg.gif') repeat-x top left;height:32px;}
