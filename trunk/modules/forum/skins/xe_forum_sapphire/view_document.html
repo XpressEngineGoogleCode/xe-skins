@@ -142,24 +142,8 @@
 
 	<div class="ctrlbar_right">
 		<!--@if($is_logged || $module_info->allow_anonymous_search==Y)-->
-		<form action="{getUrl()}" method="get" onsubmit="return procFilter(this, search)" id="fo_search" class="forumSearchForm">
-
-
-
-			<!--@if($vid)-->
-			<input type="hidden" name="vid" value="{$vid}" name="searchIn"/>
-			<!--@end-->
-			<input type="hidden" name="mid" value="{$mid}" />
-			<input type="hidden" name="category" value="{$category}" />
-
-			<div class="search">
-				<input type="text" class="search_keyword" size="15" placeholder="search" />
-				<input type="image" class="search_submit" src="images/search_submit.gif" />
-			</div><!-- // search -->
-
-		</form>
+			<div class="ctrlbar_right"><!--#include("search_form.html")--></div>
 		<!--@end-->
-
 	</div>
 </div>
 
