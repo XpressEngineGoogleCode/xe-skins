@@ -1,23 +1,69 @@
 <!--%import("banner.css")-->
-<div class="xeBanner v{$xb}">
-    <div id="v1" class="section">
-        <h2>{$widget_info->title_1}</h2>
-        <p>{$widget_info->description_1}</p>
-        <a href="{$widget_info->url_1}"><span>{$widget_info->title_1}</span></a>
-    </div>
-    <div id="v2" class="section">
-        <h2>{$widget_info->title_2}</h2>
-        <p>{$widget_info->description_2}</p>
-        <a href="{$widget_info->url_2}"><span>{$widget_info->title_2}</span></a>
-    </div>
-    <div id="v3" class="section">
-        <h2>{$widget_info->title_3}</h2>
-        <p>{$widget_info->description_3}</p>
-        <a href="{$widget_info->url_3}"><span>{$widget_info->title_3}</span></a>
-    </div>
-    <ol class="vNavigation">
-        <li><button type="button" onclick="jQuery('.xeBanner').removeClass('v2').removeClass('v3').addClass('v1');return false;"><span>{$widget_info->title_1}</span></button></li>
-        <li><button type="button" onclick="jQuery('.xeBanner').removeClass('v1').removeClass('v3').addClass('v2');return false;"><span>{$widget_info->title_2}</span></button></li>
-        <li><button type="button" onclick="jQuery('.xeBanner').removeClass('v2').removeClass('v1').addClass('v3');return false;"><span>{$widget_info->title_2}</span></button></li>
-    </ol>
-</div>
+<!--%import("https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js")-->
+<!--%import("./js/slides.min.jquery.js")-->
+<style type="text/css" media="screen">
+		.slides_container {
+			width:700px !important;
+			display:none;
+		}
+
+
+		.slides_container div {
+			width:700px !important;
+			height:300px !important;
+			display:block;
+		}
+
+		.pagination {
+			list-style:none;
+			margin:0;
+			padding:0;
+		}
+
+		.pagination .current a {
+			color:red;
+		}
+		<!--@foreach($widget_info->info as $key => $row)-->
+			<!--@if(empty($row['image']))-->
+				<!--@continue;--><!--@end-->
+			<!--@end-->
+		.xeBanner .section{$key} { background:url({$row['image']}) no-repeat;}
+		<!--@end-->
+	</style>
+<div id="slides">
+
+		<div class="slides_container xeBanner v{$xb} ">
+			<!--@foreach($widget_info->info as $key => $row)-->
+				<!--@if(empty($row['image']))-->
+					<!--@continue;--><!--@end-->
+				<!--@end-->
+			<div class="section section{$key}">
+				<h1>{$row['title']}</h1>
+				<p>{$row['description']}</p>
+				<a href='{$row['url']}'>{$row['title']}</a>
+			</div>
+			<!--@end-->
+		</div>
+	</div>
+
+<form action="{getUrl()}" method="get">
+<input type="hidden" name="vid" value="{$vid}" />
+<input type="hidden" name="mid" value="{$mid}" />
+<input type="hidden" name="act" value="IS" />
+<input type="text" name="is_keyword" class="inputTypeText" value="{$is_keyword}" />
+<span class="button">
+<input type="submit" value="{$lang->cmd_search}" />
+</span>
+</form>
+<script>
+		$(function(){
+			//var dWidth = $('#slides').parent(0).css('width');
+			//dWidth = dWidth.substr(0,dWidth.length-2);
+			//$('#slides_container').css('width',dWidth);
+			//$('#slides').$('div').css('xeBanner',dWidth);
+			$('#slides').slides({
+				preload: true,
+				generateNextPrev: true
+			});
+		});
+</script>
