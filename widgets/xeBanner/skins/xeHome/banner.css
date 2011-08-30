@@ -1,6 +1,6 @@
 @charset "utf-8";
 .xeBanner { position:relative; z-index:100;}
-.xeBanner .section{ display:none; position:static; height:100%;width:100%; padding-top:1px; margin:0 !important; }
+.xeBanner .section{ position:static; height:100%;width:100%; padding-top:1px; margin:0 !important; }
 .xeBanner.v1 #v1,
 .xeBanner.v2 #v2,
 .xeBanner.v3 #v3{ display:block;}

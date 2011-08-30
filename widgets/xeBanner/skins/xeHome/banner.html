@@ -31,13 +31,21 @@
 		<!--@end-->
 	</style>
 <div id="slides">
-
 		<div class="slides_container xeBanner v{$xb} ">
 			<!--@foreach($widget_info->info as $key => $row)-->
 				<!--@if(empty($row['image']))-->
 					<!--@continue;--><!--@end-->
 				<!--@end-->
-			<div class="section section{$key}"></div>
+			<div>
+			<a href='{$row['url']}'>
+				<div class="section section{$key}">
+					<!--
+					<h1>{$row['title']}</h1>
+					<p>{$row['description']}</p>
+					-->
+				</div>
+			</a>
+			</div>
 			<!--@end-->
 		</div>
 	</div>
