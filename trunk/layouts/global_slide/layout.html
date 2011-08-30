@@ -7,10 +7,10 @@
 			<a href="{$layout_info->index_url}" cond="$layout_info->logo_image"><img src="{$layout_info->logo_image}" class="iePngFix" width="144" height="47" alt="LOGO" title="LOGO" /></a>
 			<a href="{$layout_info->index_url}" cond="!$layout_info->logo_image">{$layout_info->logo_image_alt}</a>
 		</div>
-        
-		
-		
-		
+
+
+
+
 		<ul class="gnb">
         	<!--<li class="m1 m_on">-->
 			<li loop="$main_menu->list=>$key1,$val1" class="m1">
@@ -28,50 +28,14 @@
 
     </div><!-- //header -->
 </div><!-- //top -->
+
 <div class="main">
 	<div id="slide_widget" class="slide_widget">
+		<div class="mask">
+			<img class="zbxe_widget_output" widget="xeBanner" skin="xeHome" banner_height="418" banner_width="958" banner_1="http://ray.dev2.xpressengine.com/./files/attach/filebox/135/004/4135.jpg" banner_2="http://ray.dev2.xpressengine.com/./files/attach/filebox/136/004/4136.jpg" banner_3="http://ray.dev2.xpressengine.com/./files/attach/filebox/137/004/4137.jpg" banner_4="http://ray.dev2.xpressengine.com/./files/attach/filebox/138/004/4138.jpg" />
+		</div>
+	</div>
 
-        <div class="mask">
-        <ul class="imgSet">
-            <li>
-                <div class="item">
-                    <p class="img">
-                        <a href="#"><img src="images/slide_img_3.jpg" width="958" height="396" alt="slide1" title="slide1" /></a>
-                    </p>
-                    <div class="shadow">
-                        <img src="images/slide_shadow.png" width="927" height="99" alt="" class="iePngFix" />
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="item">
-                    <p class="img">
-                        <a href="#"><img src="images/slide_img_3.jpg" width="958" height="396" alt="slide1" title="slide1" /></a>
-                    </p>
-                    <div class="shadow">
-                        <img src="images/slide_shadow.png" width="927" height="99" alt="" class="iePngFix" />
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="item">
-                    <p class="img">
-                        <a href="#"><img src="images/slide_img_3.jpg" width="958" height="396" alt="slide1" title="slide1" /></a>
-                    </p>
-                    <div class="shadow">
-                        <img src="images/slide_shadow.png" width="927" height="99" alt="" class="iePngFix" />
-                    </div>
-                </div>
-            </li>
-        </ul>
-        </div><!-- //mask -->
-        <ul class="paging">
-            <li class="on"><a href="#"><span>1</span></a></li>
-            <li class="off"><a href="#"><span>2</span></a></li>
-            <li class="off"><a href="#"><span>3</span></a></li>
-        </ul>
-    </div><!-- //slide_widget" -->
-    
     <div class="container">
     	{$content}
     </div><!-- //container -->
