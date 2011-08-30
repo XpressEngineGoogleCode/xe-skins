@@ -57,13 +57,11 @@
 </form>
 <script>
 		$(function(){
-			//var dWidth = $('#slides').parent(0).css('width');
-			//dWidth = dWidth.substr(0,dWidth.length-2);
-			//$('#slides_container').css('width',dWidth);
-			//$('#slides').$('div').css('xeBanner',dWidth);
 			$('#slides').slides({
 				preload: true,
-				generateNextPrev: true
+				generateNextPrev: true,
+				play: 4000,
+				slideSpeed:2000
 			});
 		});
 </script>
