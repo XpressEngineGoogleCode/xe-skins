@@ -2,10 +2,10 @@
 <!--%import("./js/jquery.min.js")-->
 <!--%import("./js/slides.min.jquery.js")-->
 <style type="text/css" media="screen">
-		.slides_container {
+		/*.slides_container {
 			width:{$widget_info->imgWidth} !important;
 			display:none;
-		}
+		}*/
 
 		.slides_container div {
 			width:{$widget_info->imgWidth} !important;
@@ -13,20 +13,20 @@
 			display:block;
 		}
 
-		.pagination {
+		/*.pagination {
 			list-style:none;
 			margin:0;
 			padding:0;
 			text-align:center
-		}
-		.pagination li{
+		}*/
+		/*.pagination li{
 			display:inline !important;
 
-		}
+		}*/
 
-		.pagination .current a {
+		/*.pagination .current a {
 			color:red
-		}
+		}*/
 		<!--@foreach($widget_info->info as $key => $row)-->
 			<!--@if(empty($row['image']))-->
 				<!--@continue;--><!--@end-->
@@ -53,7 +53,7 @@
 			<!--@end-->
 		</div>
 	</div>
-
+<!--
 <form action="{getUrl()}" method="get">
 <input type="hidden" name="vid" value="{$vid}" />
 <input type="hidden" name="mid" value="{$mid}" />
@@ -63,6 +63,7 @@
 <input type="submit" value="{$lang->cmd_search}" />
 </span>
 </form>
+-->
 <script>
 		$(function(){
 			$('#slides').slides({
@@ -72,5 +73,6 @@
 				slideSpeed:2000,
 				pause:1
 			});
+		$('ul.pagination li a').html('&nbsp');
 		});
 </script>
