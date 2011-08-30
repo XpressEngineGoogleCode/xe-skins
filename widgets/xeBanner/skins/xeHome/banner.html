@@ -7,7 +7,6 @@
 			display:none;
 		}
 
-
 		.slides_container div {
 			width:{$widget_info->imgWidth} !important;
 			height:{$widget_info->imgHeight} !important;
@@ -18,10 +17,15 @@
 			list-style:none;
 			margin:0;
 			padding:0;
+			text-align:center
+		}
+		.pagination li{
+			display:inline !important;
+
 		}
 
 		.pagination .current a {
-			color:red;
+			color:red
 		}
 		<!--@foreach($widget_info->info as $key => $row)-->
 			<!--@if(empty($row['image']))-->
@@ -30,7 +34,7 @@
 		.xeBanner .section{$key} { background:url({$row['image']}) no-repeat;}
 		<!--@end-->
 	</style>
-<div id="slides">
+	<div id="slides">
 		<div class="slides_container xeBanner v{$xb} ">
 			<!--@foreach($widget_info->info as $key => $row)-->
 				<!--@if(empty($row['image']))-->
@@ -62,8 +66,8 @@
 <script>
 		$(function(){
 			$('#slides').slides({
-				preload: true,
-				generateNextPrev: true,
+				preload: false,
+				generateNextPrev: false,
 				play: 4000,
 				slideSpeed:2000
 			});
