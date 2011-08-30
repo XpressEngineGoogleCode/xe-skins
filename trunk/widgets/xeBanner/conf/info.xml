@@ -14,6 +14,24 @@
 	</author>
 
 	<extra_vars>
+		<var id="banner_height">
+            <type >text</type>
+			<name xml:lang="ko">image height</name>
+			<name xml:lang="en">image height</name>
+			<name xml:lang="zh-CN">image height</name>
+            <description xml:lang="ko">image height(default: 960px) </description>
+            <description xml:lang="en">image height(default: 960px) </description>
+            <description xml:lang="zh-CN">image height(default: 960px) </description>
+        </var>
+        <var id="banner_width">
+            <type >text</type>
+			<name xml:lang="ko">image width</name>
+			<name xml:lang="en">image width</name>
+			<name xml:lang="zh-CN">image width</name>
+            <description xml:lang="ko">image width(default 1041px) </description>
+            <description xml:lang="en">image width(default 1041px) </description>
+            <description xml:lang="zh-CN">image width(default 1041px) </description>
+        </var>
         <var id="banner_1">
             <type filter="jpg,jpeg,gif,png">filebox</type>
 			<name xml:lang="ko">한국어 배너 이미지1</name>

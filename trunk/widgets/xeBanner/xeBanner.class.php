@@ -18,6 +18,26 @@
             //number of the image
             $imageNo = 5;
 
+            //height,width
+            $pixRE = '/^[0-9]+(px)?$/si';
+            $widget_info->imgHeight = '960px';
+            $preRE = '/px/si';
+            if(preg_match( $pixRE, $args->banner_height)){
+            	//no 'px' to add 'px'
+            	if(!preg_match($preRE, $args->banner_height)){
+					$args->banner_height .= 'px';
+            	}
+   				$widget_info->imgHeight = $args->banner_height;
+            }
+            $widget_info->imgWidth = '1041px';
+            if(preg_match( $pixRE, $args->banner_width)){
+					//no 'px' to add 'px'
+	            	if(!preg_match($preRE, $args->banner_width)){
+						$args->banner_width .= 'px';
+	            	}
+   				$widget_info->imgWidth = $args->banner_width;
+            }
+
             // 위젯 변수 설정
             for($i=1;$i<=$imageNo;$i++){
             	//title
@@ -48,20 +68,6 @@
             }
 
             Context::set('widget_info', $widget_info);
-
-//            // 배너 이미지를 header에 추가
-//        	$style = '<style type="text/css">';
-//            foreach($widget_info->info as $key => $row){
-//            	if(empty($row['image'])){
-//            		continue;
-//            	}
-//            	$style .= '
-//            				.xeBanner .section'.@$key.' { background:url('.@$row['image'].') no-repeat;}';
-//            }
-//            $style .= '
-//            			</style>';
-//            Context::addHtmlHeader($style);
-
 
             // 1~3중 순서대로 처리
             if(!$_COOKIE['xb']) $_COOKIE['xb']=0;

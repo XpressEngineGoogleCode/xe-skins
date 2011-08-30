@@ -3,14 +3,14 @@
 <!--%import("./js/slides.min.jquery.js")-->
 <style type="text/css" media="screen">
 		.slides_container {
-			width:700px !important;
+			width:{$widget_info->imgWidth} !important;
 			display:none;
 		}
 
 
 		.slides_container div {
-			width:700px !important;
-			height:300px !important;
+			width:{$widget_info->imgWidth} !important;
+			height:{$widget_info->imgHeight} !important;
 			display:block;
 		}
 
@@ -37,11 +37,7 @@
 				<!--@if(empty($row['image']))-->
 					<!--@continue;--><!--@end-->
 				<!--@end-->
-			<div class="section section{$key}">
-				<h1>{$row['title']}</h1>
-				<p>{$row['description']}</p>
-				<a href='{$row['url']}'>{$row['title']}</a>
-			</div>
+			<div class="section section{$key}"></div>
 			<!--@end-->
 		</div>
 	</div>
