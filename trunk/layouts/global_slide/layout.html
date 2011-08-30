@@ -1,0 +1,95 @@
+<load target="js/script.js" />
+<load target="css/style.css" />
+<div id="wrap">
+<div class="top">
+    <div class="header">
+    	<div class="logo">
+			<a href="{$layout_info->index_url}" cond="$layout_info->logo_image"><img src="{$layout_info->logo_image}" class="iePngFix" width="144" height="47" alt="LOGO" title="LOGO" /></a>
+			<a href="{$layout_info->index_url}" cond="!$layout_info->logo_image">{$layout_info->logo_image_alt}</a>
+		</div>
+        
+		
+		
+		
+		<ul class="gnb">
+        	<!--<li class="m1 m_on">-->
+			<li loop="$main_menu->list=>$key1,$val1" class="m1">
+				<a class="m1_a" href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'"><span class="m1_span">{$val1['link']}</span></a>
+				<div class="sub" cond="$val1['list']">
+					<ul class="lnb">
+						<li loop="$val1['list']=>$key2,$val2" class="s1"><a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a></li>
+					</ul>
+					<div class="bottom"><span></span></div>
+				</div>
+			</li>
+        </ul><!-- //gnb -->
+		<!-- 로그인 -->
+		<img class="zbxe_widget_output" widget="login_info" skin="global_slide" colorset="default" />
+
+    </div><!-- //header -->
+</div><!-- //top -->
+<div class="main">
+	<div id="slide_widget" class="slide_widget">
+
+        <div class="mask">
+        <ul class="imgSet">
+            <li>
+                <div class="item">
+                    <p class="img">
+                        <a href="#"><img src="images/slide_img_3.jpg" width="958" height="396" alt="slide1" title="slide1" /></a>
+                    </p>
+                    <div class="shadow">
+                        <img src="images/slide_shadow.png" width="927" height="99" alt="" class="iePngFix" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item">
+                    <p class="img">
+                        <a href="#"><img src="images/slide_img_3.jpg" width="958" height="396" alt="slide1" title="slide1" /></a>
+                    </p>
+                    <div class="shadow">
+                        <img src="images/slide_shadow.png" width="927" height="99" alt="" class="iePngFix" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item">
+                    <p class="img">
+                        <a href="#"><img src="images/slide_img_3.jpg" width="958" height="396" alt="slide1" title="slide1" /></a>
+                    </p>
+                    <div class="shadow">
+                        <img src="images/slide_shadow.png" width="927" height="99" alt="" class="iePngFix" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+        </div><!-- //mask -->
+        <ul class="paging">
+            <li class="on"><a href="#"><span>1</span></a></li>
+            <li class="off"><a href="#"><span>2</span></a></li>
+            <li class="off"><a href="#"><span>3</span></a></li>
+        </ul>
+    </div><!-- //slide_widget" -->
+    
+    <div class="container">
+    	{$content}
+    </div><!-- //container -->
+</div><!-- //main -->
+
+<div class="footer">
+	<p class="footer_p">Powered by <span class="fwB">XE</span></p>
+	<p class="footer_p">Copyright &copy; 2011 XE. All rights reserved.</p>
+    <dl id="selectLang">
+    	<dt>language</dt>
+        <dd>
+        	<div class="langBtn" title="{$lang_type}">{$lang_supported[$lang_type]}</div>
+            <ul class="langSet">
+				<li loop="$lang_supported=>$key,$val" cond="$key!= $lang_type">
+				<a onclick="doChangeLangType('{$key}');return false;" href="#">{$val}</a>
+				</li>
+			</ul>
+        </dd>
+    </dl>
+</div><!-- //tail -->
+</div><!-- //#wrap -->
