@@ -3,36 +3,35 @@
 <!--%import("./js/slides.min.jquery.js")-->
 <style type="text/css" media="screen">
 		.slide_widget .mask {
-			width:{$widget_info->imgWidth} !important;
+			width:{$widget_info->imgWidth}px !important;
 		}
 		.slides_container div {
-			width:{$widget_info->imgWidth} !important;
-			height:{$widget_info->imgHeight} !important;
+			width:{$widget_info->imgWidth}px !important;
+			height:{$widget_info->imgHeight+99}px !important;
 			display:block;
 		}
-		<!--@foreach($widget_info->info as $key => $row)-->
-			<!--@if(empty($row['image']))-->
-				<!--@continue;--><!--@end-->
-			<!--@end-->
-		.xeBanner .section{$key} { background:url({$row['image']}) no-repeat;}
-		<!--@end-->
 </style>
 <div class="slide_widget">
 	<div class="mask">
 		<div class="slides">
 			<div class="slides_container xeBanner v{$xb} ">
 				<!--@foreach($widget_info->info as $key => $row)-->
-					<!--@if(empty($row['image']))-->
-						<!--@continue;--><!--@end-->
-					<!--@end-->
 				<div>
-					<a href='{$row['url']}'>
-						<div class="section section{$key}">
-							<!--
-							<h1>{$row['title']}</h1>
-							<p>{$row['description']}</p>
-							-->
-						</div>
+					<a href="{$row['url']}">
+					<div class="section">
+
+
+	                        	<img src="{$row['image']}" width='{$widget_info->imgWidth}' height='{$widget_info->imgHeight}' <!--@if($row['title'])-->alt="{$row['title']}"<!--@end-->/>
+
+
+	                    <div class="shadow" style="height:99px">
+	                        <img src="./images/slide_shadow.png" width="{$widget_info->imgWidth}" <!--@if($row['title'])-->alt="{$row['title']}" <!--@end--> class="iePngFix" />
+	                    </div>
+						<!--
+						<h1>{$row['title']}</h1>
+						<p>{$row['description']}</p>
+						-->
+					</div>
 					</a>
 				</div>
 				<!--@end-->
@@ -56,8 +55,8 @@
 			$('.slides').slides({
 				preload: false,
 				generateNextPrev: false,
-				play: 4000,
-				slideSpeed:2000,
+				//play: 4000,
+				//slideSpeed:2000,
 				pause:1
 			});
 			$('ul.pagination li a').html('&nbsp');
