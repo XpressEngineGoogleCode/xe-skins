@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget version="0.2">
-	<title xml:lang="ko">XE Banner</title>
-	<title xml:lang="en">XE Banner</title>
-	<title xml:lang="zh-CN">XE Banner</title>
+	<title xml:lang="ko">Banner</title>
+	<title xml:lang="en">Banner</title>
+	<title xml:lang="zh-CN">Banner</title>
 	<description xml:lang="ko">3개의 배너 이미지를 롤링하는 위젯입니다</description>
 	<description xml:lang="en">widget for images slider</description>
 	<description xml:lang="zh-CN">图片滚动小部件</description>
 	<version>0.1</version>
 	<date>2009-06-10</date>
 
-	<author email_address="zero@zeroboard.com" link="http://www.zeroboard.com">
-		<name xml:lang="ko">zero</name>
+	<author email_address="developers@xpressengine.com" link="http://www.xpressengine.com">
+		<name xml:lang="ko">NHN</name>
+		<name xml:lang="en">NHN</name>
+		<name xml:lang="zh-CN">NHN</name>
 	</author>
 
 	<extra_vars>
-		<var id="banner_height">
-            <type >text</type>
-			<name xml:lang="ko">image height</name>
-			<name xml:lang="en">image height</name>
-			<name xml:lang="zh-CN">image height</name>
-            <description xml:lang="ko">image height(default: 960px) </description>
-            <description xml:lang="en">image height(default: 960px) </description>
-            <description xml:lang="zh-CN">image height(default: 960px) </description>
-        </var>
         <var id="banner_width">
             <type >text</type>
 			<name xml:lang="ko">image width</name>
@@ -32,39 +25,20 @@
             <description xml:lang="en">image width(default 1041px) </description>
             <description xml:lang="zh-CN">image width(default 1041px) </description>
         </var>
+		<var id="banner_height">
+            <type >text</type>
+			<name xml:lang="ko">image height</name>
+			<name xml:lang="en">image height</name>
+			<name xml:lang="zh-CN">image height</name>
+            <description xml:lang="ko">image height(default: 960px) </description>
+            <description xml:lang="en">image height(default: 960px) </description>
+            <description xml:lang="zh-CN">image height(default: 960px) </description>
+        </var>
         <var id="banner_1">
             <type filter="jpg,jpeg,gif,png">filebox</type>
 			<name xml:lang="ko">한국어 배너 이미지1</name>
 			<name xml:lang="en">image 1</name>
 			<name xml:lang="zh-CN">横幅图片1</name>
-            <description xml:lang="ko">한국어 배너 이미지를 등록해주세요. (가로 960px, 세로 1041px) </description>
-        </var>
-        <var id="banner_2">
-            <type filter="jpg,jpeg,gif,png">filebox</type>
-			<name xml:lang="ko">한국어 배너 이미지2</name>
-			<name xml:lang="en">image 2</name>
-			<name xml:lang="zh-CN">横幅图片2</name>
-            <description xml:lang="ko">한국어 배너 이미지를 등록해주세요. (가로 960px, 세로 1041px) </description>
-        </var>
-        <var id="banner_3">
-            <type filter="jpg,jpeg,gif,png">filebox</type>
-			<name xml:lang="ko">한국어 배너 이미지3</name>
-			<name xml:lang="en">image 3</name>
-			<name xml:lang="zh-CN">横幅图片3</name>
-            <description xml:lang="ko">한국어 배너 이미지를 등록해주세요. (가로 960px, 세로 1041px) </description>
-        </var>
-        <var id="banner_4">
-            <type filter="jpg,jpeg,gif,png">filebox</type>
-			<name xml:lang="ko">한국어 배너 이미지3</name>
-			<name xml:lang="en">image 4</name>
-			<name xml:lang="zh-CN">横幅图片4</name>
-            <description xml:lang="ko">한국어 배너 이미지를 등록해주세요. (가로 960px, 세로 1041px) </description>
-        </var>
-        <var id="banner_5">
-            <type filter="jpg,jpeg,gif,png">filebox</type>
-			<name xml:lang="ko">한국어 배너 이미지5</name>
-			<name xml:lang="en">image 5</name>
-			<name xml:lang="zh-CN">横幅图片5</name>
             <description xml:lang="ko">한국어 배너 이미지를 등록해주세요. (가로 960px, 세로 1041px) </description>
         </var>
         <var id="banner_title_1">
@@ -88,6 +62,13 @@
             <name xml:lang="zh-CN">URL #1</name>
             <description xml:lang="ko">배너 이미지에 연결될 URL 1번을 입력해주세요.</description>
         </var>
+        <var id="banner_2">
+            <type filter="jpg,jpeg,gif,png">filebox</type>
+			<name xml:lang="ko">한국어 배너 이미지2</name>
+			<name xml:lang="en">image 2</name>
+			<name xml:lang="zh-CN">横幅图片2</name>
+            <description xml:lang="ko">한국어 배너 이미지를 등록해주세요. (가로 960px, 세로 1041px) </description>
+        </var>
         <var id="banner_title_2">
             <type>text</type>
             <name xml:lang="ko">제목 #2</name>
@@ -108,6 +89,13 @@
             <name xml:lang="en">URL #2</name>
             <name xml:lang="zh-CN">URL #2</name>
             <description xml:lang="ko">배너 이미지에 연결될 URL 2번을 입력해주세요.</description>
+        </var>
+        <var id="banner_3">
+            <type filter="jpg,jpeg,gif,png">filebox</type>
+			<name xml:lang="ko">한국어 배너 이미지3</name>
+			<name xml:lang="en">image 3</name>
+			<name xml:lang="zh-CN">横幅图片3</name>
+            <description xml:lang="ko">한국어 배너 이미지를 등록해주세요. (가로 960px, 세로 1041px) </description>
         </var>
         <var id="banner_title_3">
             <type>text</type>
@@ -130,7 +118,14 @@
             <name xml:lang="zh-CN">URL #3</name>
             <description xml:lang="ko">배너 이미지에 연결될 URL 3번을 입력해주세요.</description>
         </var>
-        <var id="banner_title_4">
+        <var id="banner_4">
+            <type filter="jpg,jpeg,gif,png">filebox</type>
+			<name xml:lang="ko">한국어 배너 이미지3</name>
+			<name xml:lang="en">image 4</name>
+			<name xml:lang="zh-CN">横幅图片4</name>
+            <description xml:lang="ko">한국어 배너 이미지를 등록해주세요. (가로 960px, 세로 1041px) </description>
+        </var>
+	    <var id="banner_title_4">
             <type>text</type>
             <name xml:lang="ko">제목 #4</name>
             <name xml:lang="en">title for image 4</name>
@@ -150,6 +145,13 @@
             <name xml:lang="en">URL #4</name>
             <name xml:lang="zh-CN">URL #4</name>
             <description xml:lang="ko">배너 이미지에 연결될 URL 4번을 입력해주세요.</description>
+        </var>
+        <var id="banner_5">
+            <type filter="jpg,jpeg,gif,png">filebox</type>
+			<name xml:lang="ko">한국어 배너 이미지5</name>
+			<name xml:lang="en">image 5</name>
+			<name xml:lang="zh-CN">横幅图片5</name>
+            <description xml:lang="ko">한국어 배너 이미지를 등록해주세요. (가로 960px, 세로 1041px) </description>
         </var>
         <var id="banner_title_5">
             <type>text</type>
