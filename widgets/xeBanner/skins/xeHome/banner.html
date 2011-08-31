@@ -2,10 +2,8 @@
 <!--%import("./js/jquery.min.js")-->
 <!--%import("./js/slides.min.jquery.js")-->
 <style type="text/css" media="screen">
-		.slide_widget div {
+		.slide_widget .mask {
 			width:{$widget_info->imgWidth} !important;
-			height:{$widget_info->imgHeight} !important;
-			display:block;
 		}
 		.slides_container div {
 			width:{$widget_info->imgWidth} !important;
@@ -62,6 +60,6 @@
 				slideSpeed:2000,
 				pause:1
 			});
-		$('ul.pagination li a').html('&nbsp');
+			$('ul.pagination li a').html('&nbsp');
 		});
 </script>
