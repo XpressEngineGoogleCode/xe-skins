@@ -2,10 +2,10 @@
 <!--%import("./js/jquery.min.js")-->
 <!--%import("./js/slides.min.jquery.js")-->
 <style type="text/css" media="screen">
-		.slide_widget .mask {
+		.slide_widget_{$widget_info->classPre} .mask {
 			width:{$widget_info->imgWidth}px !important;
 		}
-		.slides_container,.slides_container div {
+		.slides_container_{$widget_info->classPre},.slides_container_{$widget_info->classPre} div {
 			width:{$widget_info->imgWidth}px !important;
 			<!--@if($widget_info->is_default)-->
 			height:{$widget_info->imgHeight+35}px !important;
@@ -14,11 +14,17 @@
 			<!--@end-->
 			display:block;
 		}
+		.buttonBox{
+			z-index:201
+		}
+		.section div{
+			z-index:200
+		}
 </style>
-<div class="slide_widget">
+<div class="slide_widget_{$widget_info->classPre} slide_widget">
 	<div class="mask">
-		<div class="{$widget_info->classPre}_slides">
-			<div class="slides_container xeBanner v{$xb} ">
+		<div class="slides_{$widget_info->classPre} slides">
+			<div class="slides_container_{$widget_info->classPre} slides_container xeBanner v{$xb} ">
 				<!--@foreach($widget_info->info as $key => $row)-->
 				<div>
 					<a href="{$row['url']}">
@@ -46,16 +52,16 @@
 <script>
 	<!--@if(!$act)-->
 		$(function(){
-			$('.{$widget_info->classPre}_slides').slides({
+			$('.slides_{$widget_info->classPre}').slides({
 				preload: false,
 				generateNextPrev: false,
 				play: 4000,
 				slideSpeed:1500,
-				paginationClass: "{$widget_info->classPre.'_pagination'}",
+				paginationClass: "{'pagination_'.$widget_info->classPre}",
 				pause:1
 			});
 
-			$(".{$widget_info->classPre.'_pagination'}").addClass('pagination');
+			$(".{'pagination_'.$widget_info->classPre}").addClass('pagination');
 			$('ul.pagination li a').html('&nbsp;&nbsp;');
 		});
 	<!--@end-->
