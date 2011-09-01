@@ -39,6 +39,9 @@
 			<name xml:lang="ko">Image #1</name>
 			<name xml:lang="en">Image #1</name>
 			<name xml:lang="zh-CN">横幅图片#1</name>
+			<description xml:lang="ko">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="en">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="zh-CN">图片类型：jpg,jpeg,gif,png</description>
         </var>
         <var id="banner_title_1">
             <type>text</type>
@@ -63,6 +66,9 @@
 			<name xml:lang="ko">Image #2</name>
 			<name xml:lang="en">Image #2</name>
 			<name xml:lang="zh-CN">横幅图片#2</name>
+			<description xml:lang="ko">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="en">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="zh-CN">图片类型：jpg,jpeg,gif,png</description>
         </var>
         <var id="banner_title_2">
             <type>text</type>
@@ -87,6 +93,9 @@
 			<name xml:lang="ko">Image #3</name>
 			<name xml:lang="en">Image #3</name>
 			<name xml:lang="zh-CN">横幅图片#3</name>
+			<description xml:lang="ko">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="en">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="zh-CN">图片类型：jpg,jpeg,gif,png</description>
         </var>
         <var id="banner_title_3">
             <type>text</type>
@@ -111,6 +120,9 @@
 			<name xml:lang="ko">Image #4</name>
 			<name xml:lang="en">Image #4</name>
 			<name xml:lang="zh-CN">横幅图片#4</name>
+			<description xml:lang="ko">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="en">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="zh-CN">图片类型：jpg,jpeg,gif,png</description>
         </var>
 	    <var id="banner_title_4">
             <type>text</type>
@@ -135,6 +147,9 @@
 			<name xml:lang="ko">Image #5</name>
 			<name xml:lang="en">Image #5</name>
 			<name xml:lang="zh-CN">横幅图片#5</name>
+			<description xml:lang="ko">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="en">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="zh-CN">图片类型：jpg,jpeg,gif,png</description>
         </var>
         <var id="banner_title_5">
             <type>text</type>
