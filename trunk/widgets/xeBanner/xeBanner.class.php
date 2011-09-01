@@ -20,11 +20,11 @@
 
             //height,width
             $intRE = '/[0-9]+/msi';
-            $widget_info->imgHeight = '960';
+            $widget_info->imgHeight = '396';
             if(preg_match($intRE,$args->banner_height)){
    				$widget_info->imgHeight = $args->banner_height;
             }
-            $widget_info->imgWidth = '1041';
+            $widget_info->imgWidth = '958';
             if(preg_match($intRE,$args->banner_width)){
    				$widget_info->imgWidth = $args->banner_width;
             }
