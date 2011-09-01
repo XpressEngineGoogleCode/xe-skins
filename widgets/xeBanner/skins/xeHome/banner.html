@@ -5,28 +5,32 @@
 		.slide_widget .mask {
 			width:{$widget_info->imgWidth}px !important;
 		}
-		.slides_container div {
+		.slides_container,.slides_container div {
 			width:{$widget_info->imgWidth}px !important;
-			height:{$widget_info->imgHeight+99}px !important;
+			<!--@if($widget_info->is_default)-->
+			height:{$widget_info->imgHeight+35}px !important;
+			<!--@else-->
+			height:{$widget_info->imgHeight}px !important;
+			<!--@end-->
 			display:block;
 		}
 </style>
 <div class="slide_widget">
 	<div class="mask">
-		<div class="slides">
+		<div class="{$widget_info->classPre}_slides">
 			<div class="slides_container xeBanner v{$xb} ">
 				<!--@foreach($widget_info->info as $key => $row)-->
 				<div>
 					<a href="{$row['url']}">
 					<div class="section">
-
-
-	                        	<img src="{$row['image']}" width='{$widget_info->imgWidth}' height='{$widget_info->imgHeight}' <!--@if($row['title'])-->alt="{$row['title']}"<!--@end-->/>
-
-
-	                    <div class="shadow" style="height:99px">
-	                        <img src="./images/slide_shadow.png" width="{$widget_info->imgWidth}" <!--@if($row['title'])-->alt="{$row['title']}" <!--@end--> class="iePngFix" />
+						<div>
+	                    <img src="{$row['image']}" width='{$widget_info->imgWidth}' height='{$widget_info->imgHeight}' <!--@if($row['title'])-->alt="{$row['title']}"<!--@end-->/>
+	                	</div>
+	                    <!--@if($widget_info->is_default)-->
+	                    <div class="shadow" style="height:99px!important;">
+	                        <img src="./images/slide_shadow.png" height="99" width="{$widget_info->imgWidth}" <!--@if($row['title'])-->alt="{$row['title']}" <!--@end--> class="iePngFix" />
 	                    </div>
+	                    <!--@end-->
 						<!--
 						<h1>{$row['title']}</h1>
 						<p>{$row['description']}</p>
@@ -39,26 +43,18 @@
 		</div>
 	</div>
 </div>
-<!--
-<form action="{getUrl()}" method="get">
-<input type="hidden" name="vid" value="{$vid}" />
-<input type="hidden" name="mid" value="{$mid}" />
-<input type="hidden" name="act" value="IS" />
-<input type="text" name="is_keyword" class="inputTypeText" value="{$is_keyword}" />
-<span class="button">
-<input type="submit" value="{$lang->cmd_search}" />
-</span>
-</form>
--->
 <script>
 		$(function(){
-			$('.slides').slides({
+			$('.{$widget_info->classPre}_slides').slides({
 				preload: false,
 				generateNextPrev: false,
-				//play: 4000,
-				//slideSpeed:2000,
+				play: 4000,
+				slideSpeed:2000,
+				paginationClass: "{$widget_info->classPre.'_pagination'}",
 				pause:1
 			});
-			$('ul.pagination li a').html('&nbsp');
+
+			$(".{$widget_info->classPre.'_pagination'}").addClass('pagination');
+			$('ul.pagination li a').html('&nbsp;&nbsp;');
 		});
 </script>
