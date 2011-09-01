@@ -44,6 +44,7 @@
 	</div>
 </div>
 <script>
+	<!--@if(!$act)-->
 		$(function(){
 			$('.{$widget_info->classPre}_slides').slides({
 				preload: false,
@@ -57,4 +58,5 @@
 			$(".{$widget_info->classPre.'_pagination'}").addClass('pagination');
 			$('ul.pagination li a').html('&nbsp;&nbsp;');
 		});
+	<!--@end-->
 </script>
