@@ -19,7 +19,7 @@
             $imageNo = 5;
 
             //height,width
-            $intRE = '/^[0-9]*$/';
+            $intRE = '/[0-9]+/msi';
             $widget_info->imgHeight = '960';
             if(preg_match($intRE,$args->banner_height)){
    				$widget_info->imgHeight = $args->banner_height;
@@ -70,10 +70,7 @@
 
             //css name
             $widget_info->classPre = rand();
-
             Context::set('widget_info', $widget_info);
-
-
 
             // 템플릿의 스킨 경로를 지정 (skin, colorset에 따른 값을 설정)
             $tpl_path = sprintf('%sskins/%s', $this->widget_path, $args->skin);
