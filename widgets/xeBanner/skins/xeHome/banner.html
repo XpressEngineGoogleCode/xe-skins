@@ -5,7 +5,7 @@
 		.slide_widget_{$widget_info->classPre} .mask {
 			width:{$widget_info->imgWidth}px !important;
 		}
-		.slides_container_{$widget_info->classPre},.slides_container_{$widget_info->classPre} div {
+		.slides_{$widget_info->classPre},.slides_container_{$widget_info->classPre},.slides_container_{$widget_info->classPre} div {
 			width:{$widget_info->imgWidth}px !important;
 			<!--@if($widget_info->is_default)-->
 			height:{$widget_info->imgHeight+35}px !important;
@@ -24,11 +24,11 @@
 <div class="slide_widget_{$widget_info->classPre} slide_widget">
 	<div class="mask">
 		<div class="slides_{$widget_info->classPre} slides">
-			<div class="slides_container_{$widget_info->classPre} slides_container xeBanner v{$xb} ">
+			<div class="slides_container_{$widget_info->classPre} slides_container xeBanner v{$xb} " style="display:none">
 				<!--@foreach($widget_info->info as $key => $row)-->
 				<div>
-					<a href="{$row['url']}">
-					<div class="section">
+					<a class="url_{$widget_info->classPre}" href="{$row['url']}">
+					<div class="section section_{$widget_info->classPre}">
 						<div>
 	                    <img src="{$row['image']}" width='{$widget_info->imgWidth}' height='{$widget_info->imgHeight}' <!--@if($row['title'])-->alt="{$row['title']}"<!--@end-->/>
 	                	</div>
@@ -51,10 +51,11 @@
 </div>
 
 <script>
-if('{$act}' != 'procWidgetGenerateCodeInPage')
+if('{$act}' != 'procWidgetGenerateCodeInPage'){
 		$(function(){
 			$('.slides_{$widget_info->classPre}').slides({
-				preload: false,
+				preload: true,
+				preloadImage: './images/loading.gif',
 				generateNextPrev: false,
 				play: 4000,
 				slideSpeed:1500,
@@ -65,5 +66,5 @@ if('{$act}' != 'procWidgetGenerateCodeInPage')
 			$(".{'pagination_'.$widget_info->classPre}").addClass('pagination');
 			$('ul.pagination li a').html('&nbsp;&nbsp;');
 		});
-
+}
 </script>
