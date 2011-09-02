@@ -20,7 +20,7 @@ ul.pagination a				{text-decoration:none;}
 /* slide_widget */
 .slide_widget				{position:relative;}
 .slide_widget .mask			{position:relative;z-index:80;margin:0 auto;padding:0;overflow:hidden;}
-.slide_widget ul			{margin:0; padding:0;}
+.slide_widget ul			{margin:0; padding:0;position:relative;bottom:18px;z-index:150;}
 .slide_widget li			{float:left;list-style:none;}
 
 
