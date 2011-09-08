@@ -41,7 +41,6 @@
             $logged_info = Context::get('logged_info');
 
             $search_keyword = Context::get('search_keyword');
-
             switch($type) {
                 case 'questions' :
                         $output = $oKinModel->getNotRepliedQuestions($this->module_srl, $category_srl, $this->list_count, $page, $search_keyword);
@@ -78,6 +77,7 @@
             }
             Context::set('page_navigation', $output->page_navigation);
 
+            //trans $output->data object to array $output->data:question or replies and their point
             if(count($output->data)) {
                 $document_srls = array();
                 foreach($output->data as $key => $val) {
@@ -95,8 +95,31 @@
                     }
                 }
             }
+
+            //get user points top 5
+            $topRes['total'] = $oKinModel->getTopKinPoints();
+
+            require_once('DataTime.class.php');
+
+            //get user point by date last week
+            $startTime = time()-86400*7;
+            $endTime = time();
+            $topRes['lastWeek'] = $oKinModel->getTopKinPoints(5, $startTime, $endTime);
+
+            //get user point by date last month
+            $startTime = strtotime('last Month');
+            $endTime = time();
+            $topRes['lastMonth'] = $oKinModel->getTopKinPoints(5, $startTime, $endTime);
+
+            //get login user point
+            $topRes['userPoint'] = current($oKinModel->getTopKinPoints(1, null, null, array($logged_info->member_srl)));
+
+            Context::set('document_top', $topRes);
+
+            Context::set('is_logged', Context::get('is_logged'));
         }
 
+		//view the question
         function dispKinView() {
             $oModuleModel = &getModel('module');
             $oDocumentModel = &getModel('document');
@@ -119,7 +142,7 @@
             if(count($oDocument->getCommentCount())) {
                 $replies = $oDocument->getComments();
                 if(count($replies)) {
-                    foreach($replies as $key => $val) $parent_srls[] = $val->comment_srl; 
+                    foreach($replies as $key => $val) $parent_srls[] = $val->comment_srl;
                 }
             }
             $replies_count = $oKinModel->getKinCommentCount($parent_srls);
@@ -130,6 +153,7 @@
 
             $point_config = $oModuleModel->getModuleConfig('point');
             Context::set('point_name', $point_config->point_name?$point_config->point_name:'point');
+            Context::set('document_point', $point);
 
             Context::addJsFilter($this->module_path.'tpl/filter', 'insert_comment.xml');
         }

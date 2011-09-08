@@ -1,4 +1,4 @@
-@charset "utf-8"; 
+@charset "utf-8";
 
 /* Element Reset */
 fieldset{ border:0; margin:0; padding:0;}
@@ -207,3 +207,7 @@ ul.listTitle li.noLine { border-left:none; margin:0; padding:0; }
 .kinSearch input { height:18px; }
 
 .rightButtonBox { margin:10px 0 0 0; text-align:right; }
+
+.leftclass{width:74%;float:left;}
+.rightclass{width:200px;float:left;margin-left:45px}
+

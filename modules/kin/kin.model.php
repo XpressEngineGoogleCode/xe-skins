@@ -12,7 +12,7 @@
 
         function getNotRepliedQuestions($module_srl, $category_srl = null, $list_count = 20, $page = 1, $search_keyword = null) {
             $oDocumentModel = &getModel('document');
-            
+
             $args->module_srl = $module_srl;
             if(!is_null($category_srl)) $args->category_srl = $category_srl;
             $args->sort_index = 'doc.list_order';
@@ -28,7 +28,7 @@
 
         function getMyReplies($module_srl, $member_srl, $category_srl = null, $list_count = 20, $page = 1, $search_keyword = null) {
             $oCommentModel = &getModel('comment');
-            
+
             $args->module_srl = $module_srl;
             if(!is_null($category_srl)) $args->category_srl = $category_srl;
             $args->sort_index = 'doc.list_order';
@@ -82,7 +82,7 @@
 
         function getSelectedQuestions($module_srl, $category_srl = null, $list_count = 20, $page = 1, $search_keyword = null) {
             $oDocumentModel = &getModel('document');
-            
+
             $args->module_srl = $module_srl;
             if(!is_null($category_srl)) $args->category_srl = $category_srl;
             $args->sort_index = 'list_order';
@@ -97,7 +97,7 @@
 
         function getMyQuestions($module_srl, $category_srl = null, $member_srl, $list_count = 20, $page = 1, $search_keyword = null) {
             $oDocumentModel = &getModel('document');
-            
+
             $args->module_srl = $module_srl;
             if(!is_null($category_srl)) $args->category_srl = $category_srl;
             $args->sort_index = 'list_order';
@@ -133,6 +133,29 @@
             $args->document_srl = $document_srl;
             $output = executeQuery('kin.getKinPoint', $args);
             return $output->data->point;
+        }
+
+        function getTopKinPoints($listNumber = 5, $startTime = null, $endTime = null, $member_srl = array()) {
+        	if(!empty($member_srl)){
+        		$args->member_srl = implode(',',$member_srl);
+        	}
+
+        	if(!empty($listNumber) && $listNumber === 0){
+        		$args->listNumber = $listNumber;
+        	}
+        	if(!empty($startTime)){
+        		$args->startTime = $startTime;
+        	}
+        	if(!empty($endTime)){
+        		$args->endTime = $endTime;
+        	}
+            $output = executeQuery('kin.getTopKinPoints', $args);
+
+            $result = (array)$output->data;
+            foreach($result as &$val){
+            	$val = (array)$val;
+            }
+            return $result;
         }
 
         function getSelectedReply($document_srl) {
@@ -180,12 +203,17 @@
 				$skin_path = $module_path.'skins/'.$module_info->skin.'/';
 				if(!$module_info->skin || !is_dir($skin_path)) $skin_path = $module_path.'skins/xe_official/';
 			}
-			
+
             $oTemplateHandler = &TemplateHandler::getInstance();
             $result = new Object();
             $result->add('html', $oTemplateHandler->compile($skin_path, 'include.comments.html'));
             $result->add('parent_srl', $args->parent_srl);
             return $result;
+        }
+
+        public function getUserPoint($member_srl = null){
+			$point = $oPointModel->getPoint($member_srl);
+
         }
     }
 ?>

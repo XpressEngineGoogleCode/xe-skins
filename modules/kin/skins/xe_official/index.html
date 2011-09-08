@@ -1,6 +1,31 @@
 <!--#include("header.include.html")-->
+<div>
+<div class="leftclass">
 <!--#include("category.include.html")-->
-
+<!--@if($is_logged)-->
+	<style>
+		.pointFont{
+    		font-family: AppleGothic,Tahoma,Sans-Serif;
+    		color: #000000;
+    		font-size: 15px;
+    	}
+    	.pointFont .titleName{
+			font-size: 14px;
+			font-weight:bold;
+    	}
+    	.pointNumFont{
+    		color:orange;
+    	}
+	</style>
+	<table class='pointFont'>
+		<thead>
+			<tr>
+				<td class="pointFont titleName">user:</td><td>{$logged_info->user_name}</td>
+				<td class="pointFont titleName" style="padding-left:15px">point:</td><td class="pointNumFont">{intval($document_top['userPoint']['point'])}</td>
+			</tr>
+		</thead>
+	</table>
+	<!--@end-->
 <div class="kinTabBox">
     <ul class="kinTab">
         <li class="noLine <!--@if(!$type)-->selected<!--@end-->">
@@ -148,5 +173,9 @@
 
 <!--@end-->
 </div>
-
+</div><!--end leftclass-->
+<div class="rightclass right">
+<!--#include("toplist.html")-->
+</div>
+</div>
 <!--#include("footer.include.html")-->
