@@ -65,7 +65,7 @@
                 $output = $oDocumentController->updateDocument($oDocument, $obj);
                 if(!$output->toBool()) return $output;
                 $msg_code = 'success_updated';
-            } 
+            }
 
             $this->add('document_srl', $obj->document_srl);
             $this->setMessage($msg_code);
@@ -97,6 +97,8 @@
             if($give_point>0) $oPointController->setPoint($oDocument->get('member_srl'), $user_point+$give_point);
         }
 
+
+		//采纳问题
         function procKinSelectReply() {
             $oDocumentModel = &getModel('document');
             $oCommentModel = &getModel('comment');
@@ -114,10 +116,11 @@
 
             $logged_info = Context::get('logged_info');
             if($oSourceDocument->get('member_srl')!=$logged_info->member_srl)  return new ObjecT(-1,'msg_invalid_request');
-            
+
 
             $args->document_srl = $oSourceDocument->document_srl;
             $args->selected = $comment_srl;
+            //$args->in_time = time();
             $output = executeQuery('kin.insertKinThreadSelected', $args);
             if(!$output->toBool()) return $output;
 
@@ -135,6 +138,7 @@
             $args->comment_srl = $oComment->comment_srl;
             $args->member_srl = $oComment->get('member_srl');
             $args->point = $give_point;
+            $args->in_time = time();
             $output = executeQuery('kin.insertKinPointLog', $args);
             if(!$output->toBool()) return $output;
 
@@ -144,6 +148,8 @@
             $oPointController->setPoint($oSourceDocument->get('member_srl'), $owner_point+$give_point);
         }
 
+
+		//提交回答
         function procKinInsertReply() {
             $oKinModel = &getModel('kin');
             $oDocumentModel = &getModel('document');
@@ -172,6 +178,7 @@
             $this->setMessage('success_registed');
         }
 
+		//修改回答
         function procKinUpdateReply() {
             $oKinModel = &getModel('kin');
             $oDocumentModel = &getModel('document');
@@ -198,6 +205,8 @@
 
         }
 
+
+		//删除回答
         function procKinDeleteReply() {
             $oKinModel = &getModel('kin');
             $oDocumentModel = &getModel('document');
@@ -213,7 +222,7 @@
             if(!$oSourceDocument->isExists()) return new Object(-1,'msg_invalid_request');
 
             if($oKinModel->getSelectedReply($document_srl)) return new Object(-1,'msg_invalid_request');
-
+//var_dump('tests');
             $oCommentController->deleteComment($oReply->comment_srl);
             $this->setMessage('success_deleted');
         }
