@@ -50,7 +50,7 @@
             <!--@if($oDocument->isExists())-->
                 <strong>{number_format($oDocument->get('point'))} {$point_name}</strong>
             <!--@else-->
-                <input type="text" name="give_point" value="{$min_point}" class="givePoint" /> /{number_format($user_point)} {$point_name}
+                <input type="text" name="give_point" value="{$min_point}" class="givePoint" /> /{number_format($max_point)} {$point_name}
             <!--@end-->
             <p>{sprintf($lang->about_give_point, $min_point, $max_point)}</p></td>
         </td>

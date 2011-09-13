@@ -134,6 +134,24 @@
             $output = executeQuery('kin.getKinPoint', $args);
             return $output->data->point;
         }
+		
+		function getTotalKinPoint($limit = 5,$member_srl = null) {
+            $args->limit = $limit;
+			if(!empty($member_srl)){
+				$args->member_srl = $member_srl;
+			}
+            $output = executeQuery('kin.getTotalKinPoint', $args);
+			$result = $this->_transObjToArr($output->data);
+            return $result;
+        }
+
+		private function _transObjToArr($obj){
+			$result = (array)$obj;
+			foreach($result as &$val){
+            	$val = (array)$val;
+            }
+            return $result;
+		}
 
         function getTopKinPoints($listNumber = 5, $startTime = null, $endTime = null, $member_srl = array()) {
         	if(!empty($member_srl)){
@@ -150,11 +168,8 @@
         		$args->endTime = $endTime;
         	}
             $output = executeQuery('kin.getTopKinPoints', $args);
-
-            $result = (array)$output->data;
-            foreach($result as &$val){
-            	$val = (array)$val;
-            }
+			
+            $result = $this->_transObjToArr($output->data);
             return $result;
         }
 
