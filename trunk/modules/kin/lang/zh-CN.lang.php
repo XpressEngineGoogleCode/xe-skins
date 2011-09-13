@@ -74,4 +74,7 @@
     $lang->search_result = '搜索结果';
 
     $lang->short_replies = '评论';
+
+	$lang->kin_manage_list = "会员管理";
+	$lang->about_point_signup = "注册";
 ?>

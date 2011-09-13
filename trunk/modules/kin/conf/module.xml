@@ -44,6 +44,7 @@
         <action name="dispKinAdminAdditions" type="view" standalone="true" />
         <action name="dispKinAdminSkin" type="view" standalone="true" />
         <action name="dispKinAdminDelete" type="view" standalone="true" />
+        <action name="dispKinAdminPointList" type="view" standalone="true"/>
 
         <action name="procKinAdminInsert" type="controller" standalone="true" />
         <action name="procKinAdminDelete" type="controller" standalone="true" />

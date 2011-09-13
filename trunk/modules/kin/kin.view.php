@@ -99,8 +99,6 @@
             //get user points top 5
             $topRes['total'] = $oKinModel->getTopKinPoints();
 
-            require_once('DataTime.class.php');
-
             //get user point by date last week
             $startTime = time()-86400*7;
             $endTime = time();

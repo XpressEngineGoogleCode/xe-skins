@@ -90,5 +90,32 @@
 
             Context::set('document_count', $oDocumentModel->getDocumentCount($this->module_info->module_srl));
         }
+        
+        //copy from point module's point.admin.view.php to show the member point config page
+        function dispKinAdminPointList() {
+            $oPointModel = &getModel('point');
+
+            $args->list_count = 20;
+            $args->page = Context::get('page');
+
+            $output = $oPointModel->getMemberList($args);
+
+            // ???? ?? ??? context::set
+            Context::set('total_count', $output->total_count);
+            Context::set('total_page', $output->total_page);
+            Context::set('page', $output->page);
+            Context::set('member_list', $output->data);
+            Context::set('page_navigation', $output->page_navigation);
+
+            // ???? ?? ??
+            $oMemberModel = &getModel('member');
+
+            // group ?? ????
+            $this->group_list = $oMemberModel->getGroups();
+            Context::set('group_list', $this->group_list);
+
+            // ??? ??
+            $this->setTemplateFile('member_list');
+        }
     }
-?>
+
