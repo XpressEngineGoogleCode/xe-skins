@@ -9,7 +9,8 @@
 
         function init() {
         }
-
+		
+		//insert question
         function procKinInsert() {
             $oDocumentModel = &getModel('document');
             $oDocumentController = &getController('document');
@@ -38,8 +39,8 @@
             $point_config = $oModuleModel->getModuleConfig('point');
             $module_point_config = $oModuleModel->getModulePartConfig('point', $this->module_srl);
             $user_point = $oPointModel->getPoint($logged_info->member_srl, true);
-            $min_point = $module_point_config['insert_document'];
-            $max_point = $this->module_info->limit_give_point;
+            $min_point = 0;
+            $max_point = $module_point_config['insert_document'];
             if(!$max_point) $max_point = 100;
 
             if(!$oDocument->isExists()) {

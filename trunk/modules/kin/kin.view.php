@@ -97,7 +97,7 @@
             }
 
             //get user points top 5
-            $topRes['total'] = $oKinModel->getTopKinPoints();
+            $topRes['total'] = $oKinModel->getTotalKinPoint();
 
             //get user point by date last week
             $startTime = time()-86400*7;
@@ -110,7 +110,7 @@
             $topRes['lastMonth'] = $oKinModel->getTopKinPoints(5, $startTime, $endTime);
 
             //get login user point
-            $topRes['userPoint'] = current($oKinModel->getTopKinPoints(1, null, null, array($logged_info->member_srl)));
+            $topRes['userPoint'] = current($oKinModel->getTotalKinPoint(1,$logged_info->member_srl));
 
             Context::set('document_top', $topRes);
 
@@ -155,7 +155,8 @@
 
             Context::addJsFilter($this->module_path.'tpl/filter', 'insert_comment.xml');
         }
-
+		
+		//to ask question
         function dispKinWrite() {
             $oDocumentModel = &getModel('document');
             $oKinModel = &getModel('kin');
@@ -169,8 +170,8 @@
             $module_point_config = $oModuleModel->getModulePartConfig('point', $this->module_srl);
             Context::set('point_name', $point_config->point_name?$point_config->point_name:'point');
             Context::set('user_point', $user_point = $oPointModel->getPoint($logged_info->member_srl, true));
-            Context::set('min_point', $min_point = $module_point_config['insert_document']);
-            $max_point = $this->module_info->limit_give_point;
+            Context::set('min_point', $min_point = 0);
+            $max_point = $module_point_config['insert_document'];
             if(!$max_point) $max_point = 100;
             Context::set('max_point', $max_point);
 
@@ -178,11 +179,9 @@
             $oDocument = $oDocumentModel->getDocument($document_srl);
 
             if(!$oDocument->isExists()) {
-                if($user_point < $min_point) {
-                    if($this->module_info->limit_write == 'Y') return new Object(-1,'msg_limit_write');
-                    else {
-                        Context::set('min_point', 0);
-                    }
+                if($user_point < $max_point) {
+					Context::set('max_point', $max_point);
+					$max_point = $user_point;
                 }
                 $oDocument->add('module_srl', $this->module_srl);
                 $oDocument->add('title', Context::get('title'));
