@@ -4,12 +4,13 @@
 
 <!--@if($module_info)-->
 <div class="header4">
+<!--@if(!empty($module_srl))-->
     <h4 class="xeAdmin">
         {$module_info->mid}
         <span class="vr">|</span> 
         <a href="{getSiteUrl($module_info->domain,'','mid',$module_info->mid)}" onclick="window.open(this.href); return false;" class="view">View</a>
     </h4>
-
+<!--@end-->
     <ul class="localNavigation">
         <!--@if($module=='admin')-->
         <li <!--@if($act=='dispKinAdminList')-->class="on"<!--@end-->><a href="{getUrl('act','dispKinAdminList','module_srl','')}">{$lang->cmd_list}</a></li>
@@ -18,10 +19,11 @@
         <!--@end-->
 
         <li <!--@if($act=='dispKinAdminInsert')-->class="on"<!--@end-->><a href="{getUrl('act','dispKinAdminInsert')}">{$lang->cmd_setup}</a></li>
+		<!--@if(!empty($module_srl))-->
         <li <!--@if($act=='dispKinAdminCategory')-->class="on"<!--@end-->><a href="{getUrl('act','dispKinAdminCategory')}">{$lang->cmd_manage_category}</a></li>
-        <li <!--@if($act=='dispKinAdminGrant')-->class="on"<!--@end-->><a href="{getUrl('act','dispKinAdminGrant')}">{$lang->cmd_manage_grant}</a></li>
         <li <!--@if($act=='dispKinAdminAdditions')-->class="on"<!--@end-->><a href="{getUrl('act','dispKinAdminAdditions')}">{$lang->cmd_addition_setup}</a></li>
-        <li <!--@if($act=='dispKinAdminSkin')-->class="on"<!--@end-->><a href="{getUrl('act','dispKinAdminSkin')}">{$lang->cmd_manage_skin}</a></li>
+		<!--@end-->
+		<li <!--@if($act=='dispKinAdminPointList')-->class="on"<!--@end-->><a href="{getUrl('act','dispKinAdminPointList')}">{$lang->kin_manage_list}</a></li>
     </ul>
 </div>
 <!--@end-->
