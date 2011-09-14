@@ -40,7 +40,7 @@
             $module_point_config = $oModuleModel->getModulePartConfig('point', $this->module_srl);
             $user_point = $oPointModel->getPoint($logged_info->member_srl, true);
             $min_point = 0;
-            $max_point = $module_point_config['insert_document'];
+            $max_point = $this->module_info->limit_give_point;
             if(!$max_point) $max_point = 100;
 
             if(!$oDocument->isExists()) {

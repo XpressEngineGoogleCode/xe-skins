@@ -8,6 +8,18 @@
 			if(index==1 || index == 4 || index == 5){
 				elem.style.display = 'none';
 			}
+			if(index==0){
+				jQuery('table.rowTable tr td',elem).each(function(subIndex,subElem){					
+					if(subIndex == 1 || subIndex==2){
+						subElem.style.display = 'none';
+					}
+				});
+				jQuery('table.rowTable tr th',elem).each(function(subIndex,subElem){
+					if(subIndex == 1 || subIndex==2){	
+						subElem.style.display = 'none';
+					}
+				});
+			}
 		})
 		
 		
