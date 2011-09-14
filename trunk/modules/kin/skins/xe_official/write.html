@@ -12,7 +12,7 @@
     <table border="1" cellspacing="0">
     <!--@if($module_info->use_category=="Y")-->
     <tr>
-        <th scope="row">{$lang->ask_category}</th>
+        <th scope="row" style='width:9%'>{$lang->ask_category}</th>
         <td>
             <select name="category_srl" class="category">
                 <option value="">{$lang->category}</option>
@@ -26,7 +26,7 @@
     </tr>
     <!--@endif-->
 
-    <tr>    
+    <tr>
         <th scope="row">{$lang->notify_message}</th>
         <td>
             <input type="checkbox" name="notify_message" value="Y" <!--@if($oDocument->useNotify())-->checked="checked"<!--@end--> id="notify_message" class="inputCheck" />
@@ -45,7 +45,7 @@
 
     <table border="1" cellspacing="0">
     <tr>
-        <th scope="row">{$lang->give_point}</th>
+        <th scope="row" style='width:9%'>{$lang->give_point}</th>
         <td>
             <!--@if($oDocument->isExists())-->
                 <strong>{number_format($oDocument->get('point'))} {$point_name}</strong>
