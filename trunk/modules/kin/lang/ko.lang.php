@@ -74,4 +74,8 @@
     $lang->search_result = '검색결과';
 
     $lang->short_replies = '의견';
+	
+	$lang->topToltal = 'Points top';
+	$lang->topLastWeek = 'Last Week points top';
+	$lang->topLastMonth = 'Last Month points top';
 ?>

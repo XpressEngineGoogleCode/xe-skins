@@ -170,18 +170,19 @@
             $module_point_config = $oModuleModel->getModulePartConfig('point', $this->module_srl);
             Context::set('point_name', $point_config->point_name?$point_config->point_name:'point');
             Context::set('user_point', $user_point = $oPointModel->getPoint($logged_info->member_srl, true));
-            Context::set('min_point', $min_point = 0);
-            $max_point = $module_point_config['insert_document'];
-            if(!$max_point) $max_point = 100;
-            Context::set('max_point', $max_point);
+            Context::set('min_point', $min_point = $module_point_config['insert_document']);
+            $max_point = $this->module_info->limit_give_point;
+            if(!$max_point) $max_point = 100;            
 
             $document_srl = Context::get('document_srl');
             $oDocument = $oDocumentModel->getDocument($document_srl);
 
             if(!$oDocument->isExists()) {
-                if($user_point < $max_point) {
-					Context::set('max_point', $max_point);
-					$max_point = $user_point;
+                if($user_point < $min_point) {
+                    if($this->module_info->limit_write == 'Y') return new Object(-1,'msg_limit_write');
+                    else {
+                        Context::set('min_point', 0);
+                    }
                 }
                 $oDocument->add('module_srl', $this->module_srl);
                 $oDocument->add('title', Context::get('title'));
@@ -190,6 +191,9 @@
                 $oDocument->add('point', $point);
             }
 
+			$maxPoint = $min_point>$max_point ? $max_point:$min_point;
+			Context::set('min_point', 0);
+			Context::set('max_point', $max_point);
             Context::set('oDocument', $oDocument);
         }
 

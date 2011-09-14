@@ -68,7 +68,8 @@
             $oModuleAdminModel = &getAdminModel('module');
             Context::set('grant_content', $oModuleAdminModel->getModuleGrantHTML($this->module_info->module_srl, $this->xml_info->grant));
         }
-
+		
+		//show advance config page
         function dispKinAdminAdditions() {
             $content = '';
 

@@ -77,4 +77,8 @@
 
 	$lang->kin_manage_list = "会员管理";
 	$lang->about_point_signup = "注册";
+
+	$lang->topToltal = '会员总积分前';
+	$lang->topLastWeek = '上周积分前';
+	$lang->topLastMonth = '上月积分前';
 ?>
