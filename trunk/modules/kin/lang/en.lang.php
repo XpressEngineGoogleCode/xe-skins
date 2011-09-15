@@ -1,6 +1,6 @@
 <?php
-    $lang->kin = 'QA point';
-    $lang->about_kin = 'question & answer and point system.';
+    $lang->kin = 'QA System';
+    $lang->about_kin = 'Question&Answer system management.';
 
     $lang->total_articles = 'All Category';
 
@@ -13,7 +13,7 @@
         'My Questions',
         'My Replies',
     );
-    $lang->kin_all_questions = 'All Threads';
+    $lang->kin_all_questions = 'All Questions';
 
     $lang->cmd_ask = 'Question';
     $lang->cmd_reply = 'Reply';
@@ -40,7 +40,7 @@
     $lang->about_give_point = 'When the Questions is solved, half of the given point will be paid to the owener <br/>the other half point will be paid to the replier(minimal:%d, maximal %d).';
 
     $lang->limit_write = 'Question point limit';
-    $lang->about_limit_write = 'If user\'s point is less than needed point , the question can\'t be commited.';
+    $lang->about_limit_write = 'If the question given point is great than point limitation, the question can\'t be commited.';
     $lang->msg_limit_write = 'Your point is less than needed, can\'t commit question.';
 
     $lang->limit_give_point = 'Point Limit';
@@ -75,14 +75,14 @@
 
     $lang->short_replies = 'Comments';
 
-	$lang->kin_manage_list = "Member point management";
+	$lang->kin_manage_list = "Member Point Management";
 	$lang->about_point_signup = "Registration";
 
 	$lang->topToltal = 'Points top';
 	$lang->topLastWeek = 'Last Week points top';
 	$lang->topLastMonth = 'Last Month points top';
 
-	$lang->cmd_new = 'Create a new QA Point';
+	$lang->cmd_new = 'Create a new QA System';
 
 	$lang->user = 'User';
 	$lang->point = 'Point';
