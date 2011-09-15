@@ -116,7 +116,7 @@
             if(!$oSourceDocument->isExists() || $oKinModel->getSelectedReply($oSourceDocument->document_srl))  return new ObjecT(-1,'msg_invalid_request');
 
             $logged_info = Context::get('logged_info');
-            if($oSourceDocument->get('member_srl')!=$logged_info->member_srl)  return new ObjecT(-1,'msg_invalid_request');
+            if($oSourceDocument->get('member_srl')!=$logged_info->member_srl && !$logged_info->is_admin)  return new ObjecT(-1,'msg_invalid_request');
 
 
             $args->document_srl = $oSourceDocument->document_srl;

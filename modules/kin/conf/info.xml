@@ -2,7 +2,7 @@
 <module version="0.2">
     <title xml:lang="ko">지식인 XE</title>
     <title xml:lang="zh-CN">知识人</title>
-	<title xml:lang="en">QA Point System</title>
+	<title xml:lang="en">QA System</title>
     <description xml:lang="ko">질문과 답변을 하고 답변을 채택할 수 있는 XE 지식인 모듈입니다.</description>
     <description xml:lang="zh-CN">提问、回答及采纳为一体的XE互动问答平台。</description>
 	<description xml:lang="en">提问、回答及采纳为一体的XE互动问答平台。</description>
