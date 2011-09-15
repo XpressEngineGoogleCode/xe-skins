@@ -7,10 +7,10 @@
 		.pointFont{
     		font-family: AppleGothic,Tahoma,Sans-Serif;
     		color: #000000;
-    		font-size: 15px;
+			 margin-bottom: 5px;
     	}
     	.pointFont .titleName{
-			font-size: 14px;
+			font-size: 12px;
 			font-weight:bold;
     	}
     	.pointNumFont{
@@ -20,8 +20,8 @@
 	<table class='pointFont'>
 		<thead>
 			<tr>
-				<td class="pointFont titleName">user:</td><td>{$logged_info->user_name}</td>
-				<td class="pointFont titleName" style="padding-left:15px">point:</td><td class="pointNumFont">{number_format(intval($document_top['userPoint']['point']))}</td>
+				<td class="pointFont titleName">{$lang->user}:</td><td>{$logged_info->user_name}</td>
+				<td class="pointFont titleName" style="padding-left:5px">{$lang->point}:</td><td class="pointNumFont">{number_format(intval($document_top['userPoint']['point']))}</td>
 			</tr>
 		</thead>
 	</table>
