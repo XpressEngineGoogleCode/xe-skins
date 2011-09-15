@@ -89,7 +89,7 @@
             <a href="#replies_{$reply->comment_srl}"  onclick="doGetComments({$reply->comment_srl}); return false;"  id="replies_{$reply->comment_srl}">{$lang->short_replies}</a> ({number_format($replies_count[$reply->comment_srl])})
             <div id="replies_content_{$reply->comment_srl}" style="display:none;"></div>
         </div>
-        <!--@if(!$selected_reply && $reply->isGranted())-->
+        <!--@if((!$selected_reply && $reply->isGranted()) || ($logged_info->is_admin && $selected_reply != $reply->comment_srl))-->
         <div class="buttonArea">
             <a href="{getUrl('act','dispKinModifyReply','comment_srl', $reply->comment_srl)}" class="button"><span>{$lang->cmd_modify}</span></a>
             <a href="#" onclick="if(confirm('{$lang->confirm_delete}')) doDeleteReply('{$reply->comment_srl}'); return false;" class="button"><span>{$lang->cmd_delete}</span></a>
