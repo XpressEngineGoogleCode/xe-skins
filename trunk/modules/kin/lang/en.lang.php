@@ -46,10 +46,10 @@
     $lang->limit_give_point = 'Point Limit';
     $lang->about_limit_give_point = 'Config maximal given point(default:100).';
 
-    $lang->msg_title_is_null = '请输入标题。';
-    $lang->msg_content_is_null = '请输入提问内容。';
-    $lang->msg_point_is_null = '请输入悬赏积分。';
-    $lang->msg_point_is_over = '悬赏积分不能超过您的现有积分(%d)！';
+    $lang->msg_title_is_null = 'please input title';
+    $lang->msg_content_is_null = 'please input content';
+    $lang->msg_point_is_null = 'please input given point';
+    $lang->msg_point_is_over = 'your given point is over more than your own point(%d)!';
     $lang->msg_point_shortage = '悬赏积分不能少于最低悬赏积分(需输入%d以上)！';
     $lang->msg_point_limited = 'must below %d point!';
 
@@ -61,17 +61,17 @@
     $lang->cmd_do_comment = '回复';
 
     $lang->msg_reply_message = 'Given Point';
-    $lang->cmd_select_reply = 'Accept Reply';
+    $lang->cmd_select_reply = 'Accept Answer';
     $lang->msg_select_reply = 'Sure to accept?';
 
-    $lang->msg_selected_reply = 'Accepted Reply.';
-    $lang->cmd_move_selected_reply = 'Accepted Reply';
+    $lang->msg_selected_reply = 'Accepted Answer.';
+    $lang->cmd_move_selected_reply = 'Accepted Answer';
 
     $lang->cmd_go_kin_index = 'Return';
     $lang->kin_ing = '解决中';
     $lang->kin_complete = '已解决';
 
-    $lang->search_result = '搜索结果';
+    $lang->search_result = 'Search Result';
 
     $lang->short_replies = 'Comments';
 
@@ -81,4 +81,11 @@
 	$lang->topToltal = 'Points top';
 	$lang->topLastWeek = 'Last Week points top';
 	$lang->topLastMonth = 'Last Month points top';
+
+	$lang->cmd_new = 'Create a new QA Point';
+
+	$lang->user = 'User';
+	$lang->point = 'Point';
+
+	$lang->regdate = 'Reg Date';
 ?>

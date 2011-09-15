@@ -117,7 +117,7 @@
             Context::set('is_logged', Context::get('is_logged'));
         }
 
-		//view the question
+		//view the question and replies list
         function dispKinView() {
             $oModuleModel = &getModel('module');
             $oDocumentModel = &getModel('document');
@@ -172,9 +172,10 @@
             Context::set('user_point', $user_point = $oPointModel->getPoint($logged_info->member_srl, true));
             Context::set('min_point', $min_point = $module_point_config['insert_document']);
             $max_point = $this->module_info->limit_give_point;
-            if(!$max_point) $max_point = 100;            
+            if(!$max_point) $max_point = 100;
+			$max_point = intval($min_point) > intval($max_point) ? $max_point:$min_point;
 
-            $document_srl = Context::get('document_srl');
+			$document_srl = Context::get('document_srl');
             $oDocument = $oDocumentModel->getDocument($document_srl);
 
             if(!$oDocument->isExists()) {
@@ -190,10 +191,11 @@
                 $point = $oKinModel->getKinPoint($oDocument->document_srl);
                 $oDocument->add('point', $point);
             }
-
-			$maxPoint = $min_point>$max_point ? $max_point:$min_point;
+			
 			Context::set('min_point', 0);
 			Context::set('max_point', $max_point);
+			$limit_point = intval($user_point)>intval($this->module_info->limit_give_point)? $this->module_info->limit_give_point:$user_point;
+			Context::set('limit_point', $limit_point);
             Context::set('oDocument', $oDocument);
         }
 
