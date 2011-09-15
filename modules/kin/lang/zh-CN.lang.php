@@ -81,4 +81,9 @@
 	$lang->topToltal = '会员总积分前';
 	$lang->topLastWeek = '上周积分前';
 	$lang->topLastMonth = '上月积分前';
+
+	$lang->cmd_new = '新建QA Point';
+
+	$lang->user = '用户';
+	$lang->point = '你的积分';
 ?>

@@ -13,22 +13,9 @@
             <span class="date"><strong>{$oDocument->getRegdate('Y.m.d')}</strong> {$oDocument->getRegdate('H:i')}</span>
         </div>
         <div class="docContent">
-            {$oDocument->getContent()}
+            {$oDocument->getContent(false)}
         </div>
-        {@ $tag_list = $oDocument->get('tag_list') }
-		<!--@if(count($tag_list))-->
-		<dl class="tag">
-            <dt><img src="./img/iconTag.gif" width="27" height="11" alt="tag" /></dt>
-            <dd>
-                <ul>
-					<!--@for($i=0;$i<count($tag_list);$i++)-->
-                    {@ $tag = $tag_list[$i]; }
-                    <li><a href="{getUrl('act','','search_target','tag','search_keyword',$tag,'document_srl','')}" rel="tag">{htmlspecialchars($tag)}</a></li>
-                    <!--@end-->
-                </ul>
-            </dd>
-		</dl>
-		<!--@end-->
+
 		<!--@if($oDocument->hasUploadedFiles())-->
         <dl class="attachedFile">
             <dt><img src="./img/iconFiles.gif" width="27" height="11" alt="{$lang->uploaded_file}" /> <button type="button" class="fileToggle" onclick="jQuery(this).parents('dl.attachedFile').toggleClass('open');return false;">{$lang->uploaded_file} ({$oDocument->get('uploaded_count')})</button></dt>
@@ -120,5 +107,6 @@
 	<!--@end-->
     <a href="{getUrl('document_srl','','act','')}" class="button"><span>{$lang->cmd_go_kin_index}</span></a>
 </div>
+
 
 <!--#include("footer.include.html")-->

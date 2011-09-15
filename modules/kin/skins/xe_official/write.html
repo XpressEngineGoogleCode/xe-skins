@@ -27,13 +27,6 @@
     <!--@endif-->
 
     <tr>
-        <th scope="row">{$lang->notify_message}</th>
-        <td>
-            <input type="checkbox" name="notify_message" value="Y" <!--@if($oDocument->useNotify())-->checked="checked"<!--@end--> id="notify_message" class="inputCheck" />
-            <label for="notify_message">{$lang->about_notify_message}</label>
-        </td>
-    </tr>
-    <tr>
         <th scope="row">{$lang->title}</th>
         <td class="title"><input type="text" name="title" class="title" value="{htmlspecialchars($oDocument->get('title'))}" /></td>
     </tr>
@@ -50,14 +43,10 @@
             <!--@if($oDocument->isExists())-->
                 <strong>{number_format($oDocument->get('point'))} {$point_name}</strong>
             <!--@else-->
-                <input type="text" name="give_point" value="{$min_point}" class="givePoint" /> /{number_format($max_point)} {$point_name}
+                <input type="text" name="give_point" value="{$max_point}" class="givePoint" /> /{number_format($limit_point)} {$point_name}
             <!--@end-->
-            <p>{sprintf($lang->about_give_point, $min_point, $max_point)}</p></td>
+            <p>{sprintf($lang->about_give_point, $min_point, $limit_point)}</p></td>
         </td>
-    </tr>
-    <tr>
-        <th scope="row">{$lang->tag}</th>
-        <td><input type="text" name="tags" value="{htmlspecialchars($oDocument->get('tags'))}" class="tag" /></td>
     </tr>
     </table>
 
