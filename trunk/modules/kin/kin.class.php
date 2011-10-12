@@ -8,6 +8,8 @@
     class kin extends ModuleObject {
 
         var $search_option = array('title','content','title_content','comment','user_name','nick_name','user_id','tag'); 
+		var $list_count = 20;
+		var $page_count = 10; 
 
         function moduleInstall() {
             return new Object();

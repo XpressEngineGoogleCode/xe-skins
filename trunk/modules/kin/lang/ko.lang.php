@@ -79,6 +79,7 @@
 	$lang->topLastWeek = 'Last Week points top';
 	$lang->topLastMonth = 'Last Month points top';
 
+	$lang->kin_manage_list = "Member Point Management";
 	$lang->cmd_new = 'Create a new QA Point';
 
 	$lang->user = 'User';

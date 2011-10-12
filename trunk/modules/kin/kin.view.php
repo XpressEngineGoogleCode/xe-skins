@@ -12,6 +12,7 @@
         function init() {
             $oDocumentModel = &getModel('document');
             if($this->module_info->use_category=='Y') Context::set('categories', $oDocumentModel->getCategoryList($this->module_srl));
+			if($this->module_info->list_count) $this->list_count = $this->module_info->list_count;
 
             $template_path = sprintf("%sskins/%s/",$this->module_path, $this->module_info->skin);
             if(!is_dir($template_path)||!$this->module_info->skin) {
