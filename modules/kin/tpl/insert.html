@@ -65,6 +65,13 @@
         </td>
     </tr>
     <tr>
+        <th scope="row"><div>{$lang->list_count}</div></th>
+        <td>
+            <input type="text" name="list_count" value="{$module_info->list_count?$module_info->list_count:20}"  class="inputTypeText" />
+            <p>{$lang->about_list_count}</p>
+        </td>
+    </tr>
+    <tr>
         <th scope="row"><div>{$lang->use_category}</div></th>
         <td>
             <input type="checkbox" name="use_category" value="Y" <!--@if($module_info->use_category=='Y')-->checked="checked"<!--@end-->  class="checkbox" id="fld_for_category" />

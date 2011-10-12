@@ -40,7 +40,7 @@
     $lang->about_give_point = '回答被采纳时，将此积分的一半赠送给最佳答案回答者。<br/>另一半将返回(最低 : %d, 最高 %d)。';
 
     $lang->limit_write = '提问限制';
-    $lang->about_limit_write = '用户现有积分少于提问所需积分时，将无法提交提问。';
+    $lang->about_limit_write = '当提问悬赏积分大于悬赏积分限制时，将无法提交提问。';
     $lang->msg_limit_write = '对不起！您的积分不够，无法提交提问。';
 
     $lang->limit_give_point = '积分限制';
@@ -86,4 +86,6 @@
 
 	$lang->user = '用户';
 	$lang->point = '你的积分';
+
+	$lang->list_count = "主题数";
 ?>
